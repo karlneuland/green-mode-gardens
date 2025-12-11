@@ -94,7 +94,19 @@
         .section-padding {
             padding: 80px 0;
         }
-
+/* Custom styling for the PNG images used as service icons */
+.service-icon {
+    /* Set the strict display size, overriding the native 128px size */
+    width: 40px !important; 
+    height: 40px !important; 
+    
+    /* Ensure the image scales neatly within the 40x40 box */
+    object-fit: contain !important; 
+    
+    /* Centering and layout */
+    display: block !important; 
+    margin: 0 auto 10px auto !important; 
+}
         /* HEADER & NAVIGATION */
         .header {
             position: fixed;
@@ -830,6 +842,7 @@
 </body>
 
 </html>
+
 
 
 
