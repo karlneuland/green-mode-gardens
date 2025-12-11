@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>African Landscape - Garden & Landscaping Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5qL8u/zK/33S/7I+Tz6n7z+0B515f4o6+N4aV1rA3QdYk5c1gA9f3f4X5F5o2w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        :root {
+            --color-primary: #2D5016; /* Deep Forest Green */
+            --color-secondary: #DAA520; /* Sun Gold */
+            --color-bg-main: #FAF8F3; /* Soft Cream */
+            --color-bg-alt: #F0F4ED; /* Light Green */
+            --color-text: #333333; /* Charcoal */
+            --color-text-secondary: #666666; /* Medium Gray */
+            --color-light-text: #FFFFFF; /* White */
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+            --header-height: 80px;
+        }
+
+        /* RESET & BASE STYLES */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-bg-main);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            color: var(--color-primary);
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; margin-bottom: 25px; } 
+        h3 { font-size: 1.5rem; }
+
+        a {
+            text-decoration: none;
+            color: var(--color-primary);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--color-secondary);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        /* UTILITY CLASSES */
+        .text-center { text-align: center; }
+        .text-secondary { color: var(--color-secondary); }
+        .bg-alt { background-color: var(--color-bg-alt); }
+        .button {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--color-secondary);
+            color: var(--color-light-text);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(218, 165, 32, 0.3);
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .button:hover {
+            background-color: var(--color-primary);
+            box-shadow: 0 6px 16px rgba(45, 80, 22, 0.4);
+            transform: translateY(-2px);
+        }
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        /* HEADER & NAVIGATION */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: var(--color-bg-main);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .header.scrolled {
+            height: 60px; /* Shrink effect */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 1.6rem;
+            color: var(--color-primary);
+            letter-spacing: 1px;
+        }
+        .nav-menu {
+            display: none; /* Hidden by default on mobile */
+            list-style: none;
+        }
+        .nav-menu a {
+            padding: 10px 15px;
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+        }
+        .nav-menu a:hover {
+            color: var(--color-secondary);
+        }
+        .nav-toggle {
+            display: block; /* Visible by default on mobile */
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--color-primary);
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: var(--header-height);
+            left: 0;
+            width: 100%;
+            height: calc(100% - var(--header-height));
+            background-color: rgba(45, 80, 22, 0.98); /* Deep Forest Green with opacity */
+            z-index: 999;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .mobile-menu-overlay.open {
+            display: flex;
+            opacity: 1;
+        }
+        .mobile-menu-overlay .nav-menu {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .mobile-menu-overlay .nav-menu a {
+            color: var(--color-light-text);
+            font-size: 1.5rem;
+            padding: 15px 0;
+        }
+        .mobile-menu-overlay .nav-menu a:hover {
+            color: var(--color-secondary);
+        }
+
+        /* HERO SECTION (STATIC IMAGE) */
+        #hero {
+            position: relative;
+            height: 100vh;
+            padding-top: var(--header-height);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            color: var(--color-light-text);
+            text-align: center;
+            /* Static image background properties - USING RELATIVE PATH */
+            background-image: url('images/hero.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Optional: adds a parallax effect */
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Darker overlay for contrast */
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+        .hero-content h1 {
+            color: var(--color-light-text);
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #ffffffd0;
+        }
+
+        /* ABOUT SECTION */
+        #about .container > h2 {
+            margin-bottom: 40px; /* Increased padding under "Who We Are" */
+        }
+        #about .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .about-text h2 {
+            margin-bottom: 15px;
+        }
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--color-text-secondary);
+        }
+        .about-text h3 {
+            margin-top: 25px; 
+            margin-bottom: 25px; /* Increased padding under "Our Philosophy" */
+        }
+        .about-image {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            opacity: 0; /* for animation */
+            transform: translateY(20px); /* for animation */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .about-image.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* SERVICES SECTION */
+        #services {
+            padding-bottom: 80px;
+        }
+        #services .container {
+            padding-bottom: 0;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .service-card {
+            background-color: var(--color-bg-main);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0; /* for animation */
+            transform: translateY(20px); /* for animation */
+        }
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(45, 80, 22, 0.1);
+        }
+        .service-card h3 {
+            margin: 15px 0;
+            color: var(--color-secondary);
+            font-size: 1.25rem;
+        }
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+        }
+        .service-card .icon {
+            font-size: 3rem;
+            color: var(--color-primary);
+        }
+
+        /* TESTIMONIALS SECTION */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .testimonial-card {
+            background-color: var(--color-light-text);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--color-secondary);
+            opacity: 0; /* for animation */
+            transform: translateX(-20px); /* for animation */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .testimonial-card.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .testimonial-quote {
+            font-style: italic;
+            color: var(--color-text);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+        .testimonial-source {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+        }
+
+        /* CONTACT SECTION */
+        #contact .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--color-secondary);
+            outline: none;
+        }
+        /* Style for the Netlify Honeypot field (hidden from users) */
+        .hidden-hp { 
+            position: absolute; 
+            top: -9999px; 
+            left: -9999px;
+            visibility: hidden;
+            z-index: -1;
+        }
+
+        .contact-info {
+            padding: 30px;
+            background-color: var(--color-primary);
+            color: var(--color-light-text);
+            border-radius: 8px;
+        }
+        .contact-info h3 {
+            color: var(--color-secondary);
+            margin-bottom: 20px;
+        }
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .contact-info p i {
+            margin-right: 15px;
+            font-size: 1.2rem;
+            color: var(--color-secondary);
+        }
+        .contact-info a {
+            color: var(--color-light-text);
+        }
+        .contact-info a:hover {
+            color: var(--color-secondary);
+        }
+        .error-message {
+            color: #D32F2F; /* Red for errors */
+            font-size: 0.9rem;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            display: none;
+        }
+        .form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+            font-weight: 600;
+            text-align: center;
+        }
+        .form-message.success {
+            background-color: #D4EDDA;
+            color: #155724;
+        }
+        .form-message.error {
+            background-color: #F8D7DA;
+            color: #721C24;
+        }
+
+
+        /* FOOTER */
+        .footer {
+            background-color: var(--color-primary);
+            color: var(--color-light-text);
+            padding: 40px 0 20px 0;
+            text-align: center;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .footer-links li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+        .footer-links a {
+            color: var(--color-light-text);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        .footer-links a:hover {
+            color: var(--color-secondary);
+        }
+        .footer p {
+            font-size: 0.85rem;
+            color: #ffffffa0;
+        }
+
+        /* MEDIA QUERIES */
+
+        /* Tablet (768px and up) */
+        @media (min-width: 768px) {
+            h1 { font-size: 3.5rem; }
+            h2 { font-size: 2.5rem; margin-bottom: 30px; } 
+
+            .container {
+                padding: 60px 0;
+            }
+
+            .nav-menu {
+                display: flex;
+            }
+            .nav-toggle {
+                display: none; /* Hide toggle on tablet+ */
+            }
+            .mobile-menu-overlay {
+                display: none !important; /* Ensure mobile overlay is hidden */
+            }
+
+            #about .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            #contact .grid {
+                grid-template-columns: 1.5fr 1fr;
+            }
+        }
+
+        /* Desktop (1024px and up) */
+        @media (min-width: 1024px) {
+            h1 { font-size: 4.5rem; }
+            h2 { font-size: 3rem; margin-bottom: 40px; } 
+
+            .service-card {
+                padding: 40px;
+            }
+        }
+
+        /* Scroll Animations (using opacity and transform) */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header" id="main-header">
+        <div class="nav-container">
+            <a href="#hero" class="logo">African<span class="text-secondary">Landscape</span></a>
+            
+            <nav class="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact" class="button">Get Quote</a></li>
+            </nav>
+
+            <div class="nav-toggle" id="nav-toggle"><i class="fa-solid fa-bars"></i></div>
+        </div>
+    </header>
+
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <nav class="nav-menu">
+            <li><a href="#about" class="mobile-link">About</a></li>
+            <li><a href="#services" class="mobile-link">Services</a></li>
+            <li><a href="#testimonials" class="mobile-link">Testimonials</a></li>
+            <li><a href="#contact" class="mobile-link button">Get Quote</a></li>
+        </nav>
+    </div>
+
+    <section id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content scroll-animate">
+            <h1>Crafting <span class="text-secondary">Natural Beauty</span>, Sustainably.</h1>
+            <p>Your trusted partner in professional garden maintenance and bespoke landscaping design in Pretoria for over 20 years.</p>
+            <a href="#contact" class="button">Request a Free Consultation</a>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <h2 class="text-center scroll-animate">Who We Are</h2>
+            <div class="grid">
+                <div class="about-text scroll-animate">
+                    <p>African Landscape is a family-run business with over two decades of dedicated service in the Pretoria region. Our journey began with a simple passion: to transform ordinary spaces into extraordinary, sustainable environments that thrive in the local climate.</p>
+                    <h3 class="text-secondary">Our Philosophy</h3>
+                    <p>We believe great landscaping is a blend of art and science. Our approach is modern and organic, focusing on water-wise solutions and indigenous plants that enhance the local ecology while providing a beautiful, professional, and tranquil space for you to enjoy. From detailed garden maintenance to large-scale commercial designs, our 20+ years of experience guarantee exceptional results and unwavering professionalism.</p>
+                    <a href="#contact" class="button">Discuss Your Project</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/600x400?text=Sustainable+African+Landscaping" alt="A beautifully maintained garden with indigenous plants and a modern water feature.">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding bg-alt">
+        <div class="container">
+            <h2 class="text-center scroll-animate">Our Professional Services</h2>
+            <p class="text-center scroll-animate" style="max-width: 600px; margin: 15px auto 40px; color: var(--color-text-secondary);">We offer a complete range of services to manage, design, and maintain properties for both residential and corporate clients.</p>
+            <div class="services-grid">
+                
+                <div class="service-card scroll-animate" style="transition-delay: 0.1s;">
+                    <span class="icon fa-solid fa-leaf" aria-hidden="true"></span>
+                    <h3>Regular Garden Maintenance</h3>
+                    <p>Comprehensive weekly and bi-weekly packages including mowing, trimming, weeding, and seasonal fertilization.</p>
+                </div>
+
+                <div class="service-card scroll-animate" style="transition-delay: 0.2s;">
+                    <span class="icon fa-solid fa-trash-can" aria-hidden="true"></span>
+                    <h3>Efficient Garden Waste Removal</h3>
+                    <p>Daily and weekly removal of all garden debris, ensuring your property remains tidy, compliant with local regulations, and immaculately clean after every service.</p>
+                </div>
+
+                <div class="service-card scroll-animate" style="transition-delay: 0.3s;">
+                    <span class="icon fa-solid fa-spray-can" aria-hidden="true"></span>
+                    <h3>Comprehensive Weed Control</h3>
+                    <p>Targeted, sustainable programs for manual and chemical control of invasive species, protecting the health and aesthetics of your garden beds and lawn.</p>
+                </div>
+
+                <div class="service-card scroll-animate" style="transition-delay: 0.4s;">
+                    <span class="icon fa-solid fa-seedling" aria-hidden="true"></span>
+                    <h3>Soil Enrichment & Fertilization</h3>
+                    <p>Customized feeding programs that restore vital nutrients, balance soil pH, and promote deep root health for vibrant, resilient plant growth year-round.</p>
+                </div>
+
+                <div class="service-card scroll-animate" style="transition-delay: 0.5s;">
+                    <span class="icon fa-solid fa-bug" aria-hidden="true"></span>
+                    <h3>Pest & Disease Control</h3>
+                    <p>Expert diagnosis and treatment of common garden pests and plant diseases using eco-friendly methods.</p>
+                </div>
+                
+                <div class="service-card scroll-animate" style="transition-delay: 0.6s;">
+                    <span class="icon fa-solid fa-tree" aria-hidden="true"></span>
+                    <h3>Professional Tree Care & Removal</h3>
+                    <p>Expert pruning, health checks, and safe removal services for large and small trees by certified arborists.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section-padding">
+        <div class="container text-center">
+            <h2 class="scroll-animate">What Our Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card scroll-animate" style="transition-delay: 0.1s;">
+                    <p class="testimonial-quote"><i class="fa-solid fa-quote-left"></i> African Landscape has maintained our corporate campus for five years. Their professionalism and attention to detail are unmatched. Our gardens look immaculate year-round.</p>
+                    <p class="testimonial-author">Mr. R. van der Merwe</p>
+                    <p class="testimonial-source">Corporate Client, Centurion</p>
+                </div>
+                <div class="testimonial-card scroll-animate" style="transition-delay: 0.2s;">
+                    <p class="testimonial-quote"><i class="fa-solid fa-quote-left"></i> We hired them for a complete backyard redesign. The result is a beautiful, low-maintenance garden that is perfect for the Pretoria heat. Highly recommended!</p>
+                    <p class="testimonial-author">Mrs. T. Sibanda</p>
+                    <p class="testimonial-source">Residential Client, Waterkloof</p>
+                </div>
+                <div class="testimonial-card scroll-animate" style="transition-delay: 0.3s;">
+                    <p class="testimonial-quote"><i class="fa-solid fa-quote-left"></i> True experts. They installed a smart irrigation system that has saved us a fortune in water bills. Their team is always punctual and polite.</p>
+                    <p class="testimonial-author">Dr. G. Naidoo</p>
+                    <p class="testimonial-source">Residential Client, Lynnwood</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding bg-alt">
+        <div class="container">
+            <h2 class="text-center scroll-animate">Get in Touch</h2>
+            <div class="grid">
+                <div class="contact-form scroll-animate">
+                    <h3>Request a Free, No-Obligation Quote</h3>
+                    <form id="contactForm" name="contact-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/">
+                        <p class="hidden-hp">
+                            <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                        </p>
+
+                        <div>
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required aria-required="true" placeholder="John Doe">
+                            <div id="name-error" class="error-message">Name is required.</div>
+                        </div>
+                        <div>
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required aria-required="true" placeholder="name@example.com">
+                            <div id="email-error" class="error-message">A valid email is required.</div>
+                        </div>
+                        <div>
+                            <label for="phone">Phone Number</label>
+                            <input type="text" id="phone" name="phone" placeholder="(012) 123 4567">
+                            <div id="phone-error" class="error-message">Please enter a valid phone number.</div>
+                        </div>
+                        <div>
+                            <label for="message">Message/Project Details</label>
+                            <textarea id="message" name="message" rows="5" required aria-required="true" placeholder="Tell us about your garden maintenance or landscaping needs."></textarea>
+                            <div id="message-error" class="error-message">Message is required.</div>
+                        </div>
+                        <button type="submit" class="button">Submit Request</button>
+                    </form>
+                    <div id="form-message" class="form-message"></div>
+                </div>
+
+                <div class="contact-info scroll-animate">
+                    <h3>Contact Details (Pretoria)</h3>
+                    <p><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:+27125550000">(012) 555 0000</a></p>
+                    <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:info@africanlandscape.co.za">info@africanlandscape.co.za</a></p>
+                    <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 123 Garden Road, Pretoria, 0002</p>
+                    <p style="margin-top: 30px;"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> **20+ Years of Experience**</p>
+                    <p><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> **Fully Insured & Certified**</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <p>&copy; 2025 African Landscape. All rights reserved. Servicing the Pretoria region.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('main-header');
+            const navToggle = document.getElementById('nav-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('form-message');
+            const scrollElements = document.querySelectorAll('.scroll-animate, .about-image');
+
+            // --- 1. Navbar Scroll Effect (Shrink) ---
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // --- 2. Mobile Menu Toggle ---
+            const toggleMenu = () => {
+                mobileMenu.classList.toggle('open');
+                // Optional: Prevent background scrolling
+                document.body.classList.toggle('no-scroll');
+            };
+
+            navToggle.addEventListener('click', toggleMenu);
+            mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+            // --- 3. Smooth Scroll Behavior for Anchor Links ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    // Only prevent default if it's an internal link
+                    if (this.getAttribute('href').length > 1) {
+                         e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if (targetElement) {
+                            const headerHeight = header.classList.contains('scrolled') ? 60 : 80;
+                            const elementPosition = targetElement.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+
+            // --- 4. Scroll Animations (Intersection Observer API) ---
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }); // Use rootMargin to load slightly before hitting bottom
+
+            scrollElements.forEach(el => {
+                observer.observe(el);
+            });
+            
+            // --- 5. Form Validation & Submission ---
+            
+            // NOTE: Netlify handles the actual form submission and success redirect (to action="/"). 
+            // The following JS is for front-end validation feedback BEFORE Netlify submission.
+            
+            const showMessage = (message, type) => {
+                formMessage.textContent = message;
+                formMessage.className = `form-message ${type}`;
+                formMessage.style.display = 'block';
+                setTimeout(() => formMessage.style.display = 'none', 5000);
+            };
+
+            const validateField = (input, errorId, validator) => {
+                const errorElement = document.getElementById(errorId);
+                if (!validator(input.value.trim())) {
+                    input.classList.add('error');
+                    errorElement.style.display = 'block';
+                    return false;
+                }
+                input.classList.remove('error');
+                errorElement.style.display = 'none';
+                return true;
+            };
+
+            const isRequired = value => value.length > 0;
+            const isEmail = value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+            // Simple validation that allows empty string (optional field) or valid phone number format
+            const isPhone = value => /^\s*(\+27|0)\d{2}\s*(\d{3})\s*(\d{4})\s*$/.test(value) || value === ''; 
+
+            contactForm.addEventListener('submit', function(e) {
+                // Initial check before allowing submission to Netlify
+                let isValid = true;
+                
+                // Name validation
+                isValid = validateField(document.getElementById('name'), 'name-error', isRequired) && isValid;
+                
+                // Email validation
+                isValid = validateField(document.getElementById('email'), 'email-error', isEmail) && isValid;
+                
+                // Phone validation 
+                validateField(document.getElementById('phone'), 'phone-error', isPhone);
+
+                // Message validation
+                isValid = validateField(document.getElementById('message'), 'message-error', isRequired) && isValid;
+
+                if (!isValid) {
+                    e.preventDefault(); // Stop the form submission to Netlify if client-side validation fails
+                    showMessage('Please correct the errors in the form before submitting.', 'error');
+                } 
+                // If isValid is true, the form proceeds to submit via Netlify, which handles the redirection (action="/")
+            });
+
+        });
+    </script>
+</body>
+</html>
