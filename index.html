@@ -69,7 +69,18 @@
 
         /* UTILITY CLASSES */
         .text-center { text-align: center; }
-        .text-secondary { color: var(--color-secondary); }
+        
+        /* Updated Text-Secondary for Smooth Transition */
+        .text-secondary { 
+            color: var(--color-secondary); 
+            transition: color 0.3s ease;
+        }
+
+        /* THE SWAP EFFECT: When hovering the logo, turn the inner text Green */
+        .logo:hover .text-secondary {
+            color: var(--color-primary);
+        }
+
         .bg-alt { background-color: var(--color-bg-alt); }
         .button {
             display: inline-block;
@@ -542,7 +553,7 @@
 
     <header class="header" id="main-header">
         <div class="nav-container">
-            <a href="#hero" class="logo">African<span class="text-secondary">Landscape</span></a>
+            <a href="#hero" class="logo">Green <span class="text-secondary">Mode</span> Gardens</a>
             
             <nav class="nav-menu">
                 <li><a href="#about">About</a></li>
@@ -842,11 +853,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
