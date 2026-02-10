@@ -338,6 +338,135 @@
             color: var(--color-primary);
         }
 
+        /* PARALLAX CALLOUT SECTION */
+        #parallax-callout {
+            position: relative;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('images/parallax-callout.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+
+        .parallax-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(45, 80, 22, 0.9), rgba(45, 80, 22, 0.7));
+            z-index: 1;
+        }
+
+        .parallax-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .parallax-kicker {
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--color-secondary);
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .parallax-kicker.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .parallax-headline {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--color-light-text);
+            line-height: 1.2;
+            margin-bottom: 25px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
+        }
+
+        .parallax-headline.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .parallax-subtext {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 35px;
+            line-height: 1.7;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out 0.4s, transform 0.8s ease-out 0.4s;
+        }
+
+        .parallax-subtext.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .parallax-cta {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out 0.6s, transform 0.8s ease-out 0.6s;
+        }
+
+        .parallax-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .parallax-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out 0.8s, transform 0.8s ease-out 0.8s;
+        }
+
+        .parallax-stats.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--color-secondary);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.85);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         /* TESTIMONIALS SECTION */
         .testimonial-grid {
             display: grid;
@@ -684,6 +813,14 @@
             #contact .grid {
                 grid-template-columns: 1.5fr 1fr;
             }
+
+            .parallax-headline {
+                font-size: 3.5rem;
+            }
+
+            .parallax-stats {
+                gap: 50px;
+            }
         }
 
         /* Desktop (1024px and up) */
@@ -697,6 +834,21 @@
 
             .consultative-section {
                 padding: 60px 50px;
+            }
+
+            #parallax-callout {
+                min-height: 500px;
+            }
+
+            .parallax-headline {
+                font-size: 4rem;
+            }
+        }
+
+        /* Mobile parallax fix */
+        @media (max-width: 767px) {
+            #parallax-callout {
+                background-attachment: scroll;
             }
         }
 
@@ -807,6 +959,33 @@
                     <img src="images/professional_tree_care_and_removal.png" alt="Tree Care Icon" class="service-icon">
                     <h3>Professional Tree Care & Removal</h3>
                     <p>Expert pruning, health checks, and safe removal services for large and small trees by certified arborists.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW PARALLAX CALLOUT SECTION -->
+    <section id="parallax-callout">
+        <div class="parallax-overlay"></div>
+        <div class="parallax-content">
+            <div class="parallax-kicker">20+ Years of Excellence</div>
+            <h2 class="parallax-headline">Transform Your Outdoor Space Today</h2>
+            <p class="parallax-subtext">Experience the difference that professional care and sustainable practices make. Our expert team is ready to bring your vision to life with water-wise solutions and indigenous plant expertise.</p>
+            <div class="parallax-cta">
+                <a href="#contact" class="button" style="font-size: 1rem; padding: 16px 40px;">Start Your Project</a>
+            </div>
+            <div class="parallax-stats">
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Satisfaction</span>
                 </div>
             </div>
         </div>
@@ -1058,12 +1237,23 @@
             scrollElements.forEach(el => {
                 observer.observe(el);
             });
+
+            // --- 5. Parallax Callout Animation ---
+            const parallaxElements = document.querySelectorAll('.parallax-kicker, .parallax-headline, .parallax-subtext, .parallax-cta, .parallax-stats');
+            
+            const parallaxObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        parallaxObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            parallaxElements.forEach(el => {
+                parallaxObserver.observe(el);
+            });
         });
     </script>
 </body>
 </html>
-
-
-
-
-
