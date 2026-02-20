@@ -143,13 +143,24 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+        
+        /* UPDATED LOGO STYLES TO ACCOMMODATE IMAGE */
         .logo {
             font-family: var(--font-heading);
             font-weight: 900;
             font-size: 1.6rem;
             color: var(--color-primary);
             letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 12px; /* Space between the image and the text */
         }
+        .header-logo-img {
+            height: 40px; /* Restricts the logo to fit perfectly in the header */
+            width: auto;
+            object-fit: contain;
+        }
+
         .nav-menu {
             display: none; /* Hidden by default on mobile */
             list-style: none;
@@ -338,135 +349,6 @@
             color: var(--color-primary);
         }
 
-        /* PARALLAX CALLOUT SECTION */
-        #parallax-callout {
-            position: relative;
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: url('images/green_mode_gardens_full_width.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            overflow: hidden;
-        }
-
-        .parallax-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(45, 80, 22, 0.9), rgba(45, 80, 22, 0.7));
-            z-index: 1;
-        }
-
-        .parallax-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            padding: 60px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .parallax-kicker {
-            font-family: var(--font-heading);
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--color-secondary);
-            margin-bottom: 20px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .parallax-kicker.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .parallax-headline {
-            font-family: var(--font-heading);
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--color-light-text);
-            line-height: 1.2;
-            margin-bottom: 25px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
-        }
-
-        .parallax-headline.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .parallax-subtext {
-            font-size: 1.15rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 35px;
-            line-height: 1.7;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out 0.4s, transform 0.8s ease-out 0.4s;
-        }
-
-        .parallax-subtext.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .parallax-cta {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out 0.6s, transform 0.8s ease-out 0.6s;
-        }
-
-        .parallax-cta.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .parallax-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out 0.8s, transform 0.8s ease-out 0.8s;
-        }
-
-        .parallax-stats.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-family: var(--font-heading);
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--color-secondary);
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.85);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
         /* TESTIMONIALS SECTION */
         .testimonial-grid {
             display: grid;
@@ -503,250 +385,95 @@
             color: var(--color-text-secondary);
         }
 
-        /* CONTACT SECTION - WHATSAPP STYLE */
+        /* CONTACT SECTION */
         #contact .grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 40px;
             margin-top: 40px;
         }
-
-        .consultative-section {
-            background: white;
-            padding: 50px 40px;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .consultative-section h3 {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--color-primary);
-        }
-
-        .consultative-section .subtitle {
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.75rem;
-            color: var(--color-secondary);
-            font-weight: 700;
-            margin-bottom: 40px;
-        }
-
-        .form-section {
-            margin-bottom: 35px;
-        }
-
-        .form-section label {
+        .contact-form label {
             display: block;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-size: 0.75rem;
-            font-weight: 700;
+            margin-bottom: 8px;
+            font-weight: 600;
             color: var(--color-primary);
-            margin-bottom: 10px;
         }
-
-        .form-input {
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
             width: 100%;
-            padding: 15px 18px;
-            border: 1px solid rgba(0,0,0,0.15);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
             border-radius: 4px;
             font-family: var(--font-body);
-            font-size: 0.95rem;
-            color: var(--color-text);
-            transition: all 0.3s ease;
-            background: var(--color-bg-main);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
         }
-
-        .form-input:focus {
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--color-secondary);
             outline: none;
-            border-color: var(--color-secondary);
-            background: white;
-            box-shadow: 0 0 0 3px rgba(218, 165, 32, 0.1);
         }
-
-        textarea.form-input {
-            min-height: 120px;
-            resize: vertical;
-            line-height: 1.6;
-        }
-
-        /* Service Checkboxes Grid */
-        .services-checkbox-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-            margin-top: 15px;
-        }
-
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            padding: 12px 15px;
-            border: 1px solid rgba(0,0,0,0.1);
-            border-radius: 4px;
-            background: var(--color-bg-main);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .checkbox-item:hover {
-            border-color: var(--color-secondary);
-            background: white;
-        }
-
-        .checkbox-item input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            margin-right: 12px;
-            cursor: pointer;
-            accent-color: var(--color-secondary);
-        }
-
-        .checkbox-item label {
-            margin: 0;
-            text-transform: none;
-            letter-spacing: 0.5px;
-            font-size: 0.9rem;
-            color: var(--color-text);
-            cursor: pointer;
-            font-weight: 400;
-        }
-
-        .checkbox-item.checked {
-            background: rgba(218, 165, 32, 0.08);
-            border-color: var(--color-secondary);
-        }
-
-        .btn-submit {
-            display: block;
-            width: 100%;
-            padding: 18px;
-            background: var(--color-primary);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-family: var(--font-heading);
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 30px;
-            box-shadow: 0 4px 12px rgba(45, 80, 22, 0.3);
-        }
-
-        .btn-submit:hover {
-            background: var(--color-secondary);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(218, 165, 32, 0.4);
-        }
-
-        .divider {
-            text-align: center;
-            margin: 60px 0;
-            position: relative;
-        }
-
-        .divider::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: rgba(0,0,0,0.1);
-            z-index: 0;
-        }
-
-        .divider span {
-            background: var(--color-bg-alt);
-            padding: 0 20px;
-            position: relative;
-            z-index: 1;
-            font-family: var(--font-heading);
-            font-style: italic;
-            font-size: 1.1rem;
-            color: #999;
+        /* Style for the Netlify Honeypot field (hidden from users) */
+        .hidden-hp { 
+            position: absolute; 
+            top: -9999px; 
+            left: -9999px;
+            visibility: hidden;
+            z-index: -1;
         }
 
         .contact-info {
-            padding: 40px;
+            padding: 30px;
             background-color: var(--color-primary);
             color: var(--color-light-text);
             border-radius: 8px;
-            text-align: center;
         }
-
-        .contact-info i {
-            color: var(--color-secondary);
-            font-size: 3rem;
-            margin-bottom: 25px;
-        }
-
         .contact-info h3 {
             color: var(--color-secondary);
             margin-bottom: 20px;
-            font-size: 1.8rem;
         }
-
         .contact-info p {
-            margin-bottom: 30px;
-            line-height: 1.8;
-            font-size: 1rem;
-        }
-
-        .btn-wa-large {
-            display: inline-block;
-            padding: 18px 45px;
-            background: var(--color-secondary);
-            color: white;
-            text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 700;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(218, 165, 32, 0.3);
-        }
-
-        .btn-wa-large:hover {
-            background: white;
-            color: var(--color-primary);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(255, 255, 255, 0.3);
-        }
-
-        /* WhatsApp Float Button */
-        .wa-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25D366;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+            margin-bottom: 15px;
             display: flex;
-            justify-content: center;
             align-items: center;
-            color: white;
-            font-size: 30px;
-            z-index: 2000;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s ease;
+        }
+        .contact-info p i {
+            margin-right: 15px;
+            font-size: 1.2rem;
+            color: var(--color-secondary);
+        }
+        .contact-info a {
+            color: var(--color-light-text);
+        }
+        .contact-info a:hover {
+            color: var(--color-secondary);
+        }
+        .error-message {
+            color: #D32F2F; /* Red for errors */
+            font-size: 0.9rem;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            display: none;
+        }
+        .form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+            font-weight: 600;
+            text-align: center;
+        }
+        .form-message.success {
+            background-color: #D4EDDA;
+            color: #155724;
+        }
+        .form-message.error {
+            background-color: #F8D7DA;
+            color: #721C24;
         }
 
-        .wa-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
-        }
 
         /* FOOTER */
         .footer {
@@ -805,21 +532,8 @@
             .testimonial-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
-
-            .services-checkbox-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
             #contact .grid {
                 grid-template-columns: 1.5fr 1fr;
-            }
-
-            .parallax-headline {
-                font-size: 3.5rem;
-            }
-
-            .parallax-stats {
-                gap: 50px;
             }
         }
 
@@ -830,25 +544,6 @@
 
             .service-card {
                 padding: 40px;
-            }
-
-            .consultative-section {
-                padding: 60px 50px;
-            }
-
-            #parallax-callout {
-                min-height: 500px;
-            }
-
-            .parallax-headline {
-                font-size: 4rem;
-            }
-        }
-
-        /* Mobile parallax fix */
-        @media (max-width: 767px) {
-            #parallax-callout {
-                background-attachment: scroll;
             }
         }
 
@@ -869,7 +564,11 @@
 
     <header class="header" id="main-header">
         <div class="nav-container">
-            <a href="#hero" class="logo">Green <span class="text-secondary">Mode</span> Gardens</a>
+            
+            <a href="#hero" class="logo">
+                <img src="images/logo.png" alt="Green Mode Gardens Icon" class="header-logo-img">
+                Green <span class="text-secondary">Mode</span> Gardens
+            </a>
             
             <nav class="nav-menu">
                 <li><a href="#about">About</a></li>
@@ -895,7 +594,7 @@
         <div class="hero-overlay"></div>
         <div class="hero-content scroll-animate">
             <h1>Crafting <span class="text-secondary">Natural Beauty</span>, Sustainably.</h1>
-            <p>Your trusted partner in professional garden maintenance and bespoke landscaping design in Pretoria for over 30 years.</p>
+            <p>Your trusted partner in professional garden maintenance and bespoke landscaping design in Pretoria for over 20 years.</p>
             <a href="#contact" class="button">Request a Free Consultation</a>
         </div>
     </section>
@@ -907,7 +606,7 @@
                 <div class="about-text scroll-animate">
                     <p>African Landscape is a family-run business with over two decades of dedicated service in the Pretoria region. Our journey began with a simple passion: to transform ordinary spaces into extraordinary, sustainable environments that thrive in the local climate.</p>
                     <h3 class="text-secondary">Our Philosophy</h3>
-                    <p>We believe great landscaping is a blend of art and science. Our approach is modern and organic, focusing on water-wise solutions and indigenous plants that enhance the local ecology while providing a beautiful, professional, and tranquil space for you to enjoy. From detailed garden maintenance to large-scale commercial designs, our 30+ years of experience guarantee exceptional results and unwavering professionalism.</p>
+                    <p>We believe great landscaping is a blend of art and science. Our approach is modern and organic, focusing on water-wise solutions and indigenous plants that enhance the local ecology while providing a beautiful, professional, and tranquil space for you to enjoy. From detailed garden maintenance to large-scale commercial designs, our 20+ years of experience guarantee exceptional results and unwavering professionalism.</p>
                     <a href="#contact" class="button">Discuss Your Project</a>
                 </div>
                 <div class="about-image">
@@ -923,13 +622,6 @@
             <h2 class="text-center scroll-animate">Our Professional Services</h2>
             <p class="text-center scroll-animate" style="max-width: 600px; margin: 15px auto 40px; color: var(--color-text-secondary);">We offer a complete range of services to manage, design, and maintain properties for both residential and corporate clients.</p>
             <div class="services-grid">
-
-                <div class="service-card scroll-animate" style="transition-delay: 0.5s;">
-                    <img src="images/clean_ups.png" alt="Clean Ups Icon" class="service-icon">
-                    <h3>Clean Ups</h3>
-                    <p>Professional Clean Ups
-                    Fast, thorough property clean ups with dedicated teams ready to tackle overgrown gardens, post-construction debris, and seasonal clear-outs.</p>
-                </div>
                 
                 <div class="service-card scroll-animate" style="transition-delay: 0.1s;">
                     <img src="images/regular_garden_maintenance.png" alt="Maintenance Icon" class="service-icon">
@@ -952,40 +644,19 @@
                 <div class="service-card scroll-animate" style="transition-delay: 0.4s;">
                     <img src="images/soil_enrichment_and_fertilization.png" alt="Fertilization Icon" class="service-icon">
                     <h3>Soil Enrichment & Fertilization</h3>
-                    <p>Customized feeding programs designed in consultation with you to restore vital nutrients, balance soil pH, and promote deep root health for vibrant, resilient plant growth year-round.</p>
+                    <p>Customized feeding programs that restore vital nutrients, balance soil pH, and promote deep root health for vibrant, resilient plant growth year-round.</p>
                 </div>
 
+                <div class="service-card scroll-animate" style="transition-delay: 0.5s;">
+                    <img src="images/pest_and_disease_control.png" alt="Pest Control Icon" class="service-icon">
+                    <h3>Pest & Disease Control</h3>
+                    <p>Expert diagnosis and treatment of common garden pests and plant diseases using eco-friendly methods.</p>
+                </div>
+                
                 <div class="service-card scroll-animate" style="transition-delay: 0.6s;">
                     <img src="images/professional_tree_care_and_removal.png" alt="Tree Care Icon" class="service-icon">
                     <h3>Professional Tree Care & Removal</h3>
                     <p>Expert pruning, health checks, and safe removal services for large and small trees by certified arborists.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEW PARALLAX CALLOUT SECTION -->
-    <section id="parallax-callout">
-        <div class="parallax-overlay"></div>
-        <div class="parallax-content">
-            <div class="parallax-kicker">30+ Years of Excellence</div>
-            <h2 class="parallax-headline">Transform Your Outdoor Space Today</h2>
-            <p class="parallax-subtext">Experience the difference that professional care and sustainable practices make. Our expert team is ready to bring your vision to life with water-wise solutions and indigenous plant expertise.</p>
-            <div class="parallax-cta">
-                <a href="#contact" class="button" style="font-size: 1rem; padding: 16px 40px;">Start Your Project</a>
-            </div>
-            <div class="parallax-stats">
-                <div class="stat-item">
-                    <span class="stat-number">500+</span>
-                    <span class="stat-label">Happy Clients</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">30+</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Satisfaction</span>
                 </div>
             </div>
         </div>
@@ -1018,44 +689,45 @@
         <div class="container">
             <h2 class="text-center scroll-animate">Get in Touch</h2>
             <div class="grid">
-                <div class="consultative-section scroll-animate">
-                    <h3 class="text-center">Request Your Free Quote</h3>
-                    <p class="subtitle">Professional garden consultation</p>
+                <div class="contact-form scroll-animate">
+                    <h3>Request a Free, No-Obligation Quote</h3>
+                    <form id="contactForm" name="contact-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/">
+                        <p class="hidden-hp">
+                            <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                        </p>
 
-                    <div class="form-section">
-                        <label for="clientName">Your Name</label>
-                        <input type="text" id="clientName" class="form-input" placeholder="John Doe">
-                    </div>
-
-                    <div class="form-section">
-                        <label for="suburb">Suburb / Location</label>
-                        <input type="text" id="suburb" class="form-input" placeholder="e.g., Waterkloof, Lynnwood">
-                    </div>
-
-                    <div class="form-section">
-                        <label>Services Needed</label>
-                        <div class="services-checkbox-grid" id="servicesGrid">
-                            <!-- Services will be dynamically added here -->
+                        <div>
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required aria-required="true" placeholder="John Doe">
+                            <div id="name-error" class="error-message">Name is required.</div>
                         </div>
-                    </div>
-
-                    <div class="form-section">
-                        <label for="additionalInfo">Additional Information</label>
-                        <textarea id="additionalInfo" class="form-input" placeholder="Tell us about your garden needs, property size, or any specific requirements..."></textarea>
-                    </div>
-
-                    <button type="button" class="btn-submit" id="submitBtn">Send WhatsApp Request</button>
+                        <div>
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required aria-required="true" placeholder="name@example.com">
+                            <div id="email-error" class="error-message">A valid email is required.</div>
+                        </div>
+                        <div>
+                            <label for="phone">Phone Number</label>
+                            <input type="text" id="phone" name="phone" placeholder="(012) 123 4567">
+                            <div id="phone-error" class="error-message">Please enter a valid phone number.</div>
+                        </div>
+                        <div>
+                            <label for="message">Message/Project Details</label>
+                            <textarea id="message" name="message" rows="5" required aria-required="true" placeholder="Tell us about your garden maintenance or landscaping needs."></textarea>
+                            <div id="message-error" class="error-message">Message is required.</div>
+                        </div>
+                        <button type="submit" class="button">Submit Request</button>
+                    </form>
+                    <div id="form-message" class="form-message"></div>
                 </div>
 
-                <div>
-                    <div class="divider"><span>or</span></div>
-
-                    <div class="contact-info scroll-animate">
-                        <i class="fab fa-whatsapp"></i>
-                        <h3>Chat Directly</h3>
-                        <p>For immediate inquiries, connect with us on WhatsApp for a quick response.</p>
-                        <a href="https://wa.me/27827433803" class="btn-wa-large" target="_blank">WhatsApp Us</a>
-                    </div>
+                <div class="contact-info scroll-animate">
+                    <h3>Contact Details (Pretoria)</h3>
+                    <p><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:+27125550000">(012) 555 0000</a></p>
+                    <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:info@africanlandscape.co.za">info@africanlandscape.co.za</a></p>
+                    <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 123 Garden Road, Pretoria, 0002</p>
+                    <p style="margin-top: 30px;"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> **20+ Years of Experience**</p>
+                    <p><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> **Fully Insured & Certified**</p>
                 </div>
             </div>
         </div>
@@ -1072,117 +744,15 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/27827433803" class="wa-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const header = document.getElementById('main-header');
             const navToggle = document.getElementById('nav-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileLinks = document.querySelectorAll('.mobile-link');
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('form-message');
             const scrollElements = document.querySelectorAll('.scroll-animate, .about-image');
-
-            // Service list for checkboxes
-            const services = [
-                'Clean Up',
-                'Regular Garden Maintenance',
-                'Garden Waste Removal',
-                'Comprehensive Weed Control',
-                'Soil Enrichment & Fertilization',
-                'Professional Tree Care & Removal'
-            ];
-
-            // Initialize service checkboxes
-            function initializeServices() {
-                const servicesGrid = document.getElementById('servicesGrid');
-                
-                services.forEach((service, index) => {
-                    const div = document.createElement('div');
-                    div.className = 'checkbox-item';
-                    
-                    const checkbox = document.createElement('input');
-                    checkbox.type = 'checkbox';
-                    checkbox.id = `service-${index}`;
-                    checkbox.value = service;
-                    
-                    const label = document.createElement('label');
-                    label.htmlFor = `service-${index}`;
-                    label.textContent = service;
-                    
-                    // Add visual feedback
-                    checkbox.addEventListener('change', () => {
-                        div.classList.toggle('checked', checkbox.checked);
-                    });
-                    
-                    // Make entire div clickable
-                    div.addEventListener('click', (e) => {
-                        if (e.target !== checkbox) {
-                            checkbox.checked = !checkbox.checked;
-                            div.classList.toggle('checked', checkbox.checked);
-                        }
-                    });
-                    
-                    div.appendChild(checkbox);
-                    div.appendChild(label);
-                    servicesGrid.appendChild(div);
-                });
-            }
-
-            // Send WhatsApp message
-            function sendWhatsAppRequest() {
-                const name = document.getElementById('clientName').value.trim();
-                const suburb = document.getElementById('suburb').value.trim();
-                const additionalInfo = document.getElementById('additionalInfo').value.trim();
-                
-                const selectedServices = Array.from(document.querySelectorAll('#servicesGrid input[type="checkbox"]:checked'))
-                    .map(cb => cb.value);
-                
-                if (!name) {
-                    alert('Please enter your name.');
-                    return;
-                }
-                
-                if (selectedServices.length === 0) {
-                    alert('Please select at least one service.');
-                    return;
-                }
-                
-                let message = '🌿 GREEN MODE GARDENS - SERVICE REQUEST\n\n';
-                message += '━━━━━━━━━━━━━━━━━━━━━━━━━\n';
-                message += '📋 CLIENT DETAILS\n';
-                message += '━━━━━━━━━━━━━━━━━━━━━━━━━\n';
-                message += `👤 Name: ${name}\n`;
-                
-                if (suburb) {
-                    message += `📍 Location: ${suburb}\n`;
-                }
-                
-                message += '\n━━━━━━━━━━━━━━━━━━━━━━━━━\n';
-                message += '✅ SERVICES REQUESTED\n';
-                message += '━━━━━━━━━━━━━━━━━━━━━━━━━\n';
-                selectedServices.forEach(service => {
-                    message += `• ${service}\n`;
-                });
-                
-                if (additionalInfo) {
-                    message += '\n━━━━━━━━━━━━━━━━━━━━━━━━━\n';
-                    message += '📝 ADDITIONAL INFORMATION\n';
-                    message += '━━━━━━━━━━━━━━━━━━━━━━━━━\n';
-                    message += additionalInfo + '\n';
-                }
-                
-                message += '\n━━━━━━━━━━━━━━━━━━━━━━━━━\n';
-                message += 'Looking forward to your professional service!';
-                
-                window.open(`https://wa.me/27827433803?text=${encodeURIComponent(message)}`, '_blank');
-            }
-
-            // Initialize
-            initializeServices();
-            document.getElementById('submitBtn').addEventListener('click', sendWhatsAppRequest);
 
             // --- 1. Navbar Scroll Effect (Shrink) ---
             window.addEventListener('scroll', () => {
@@ -1196,6 +766,7 @@
             // --- 2. Mobile Menu Toggle ---
             const toggleMenu = () => {
                 mobileMenu.classList.toggle('open');
+                // Optional: Prevent background scrolling
                 document.body.classList.toggle('no-scroll');
             };
 
@@ -1205,6 +776,7 @@
             // --- 3. Smooth Scroll Behavior for Anchor Links ---
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
+                    // Only prevent default if it's an internal link
                     if (this.getAttribute('href').length > 1) {
                          e.preventDefault();
                         const targetId = this.getAttribute('href');
@@ -1224,41 +796,75 @@
                 });
             });
 
+
             // --- 4. Scroll Animations (Intersection Observer API) ---
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
+                        observer.unobserve(entry.target); // Stop observing once visible
                     }
                 });
-            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }); // Use rootMargin to load slightly before hitting bottom
 
             scrollElements.forEach(el => {
                 observer.observe(el);
             });
-
-            // --- 5. Parallax Callout Animation ---
-            const parallaxElements = document.querySelectorAll('.parallax-kicker, .parallax-headline, .parallax-subtext, .parallax-cta, .parallax-stats');
             
-            const parallaxObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {0
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        parallaxObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.2 });
+            // --- 5. Form Validation & Submission ---
+            
+            // NOTE: Netlify handles the actual form submission and success redirect (to action="/"). 
+            // The following JS is for front-end validation feedback BEFORE Netlify submission.
+            
+            const showMessage = (message, type) => {
+                formMessage.textContent = message;
+                formMessage.className = `form-message ${type}`;
+                formMessage.style.display = 'block';
+                setTimeout(() => formMessage.style.display = 'none', 5000);
+            };
 
-            parallaxElements.forEach(el => {
-                parallaxObserver.observe(el);
+            const validateField = (input, errorId, validator) => {
+                const errorElement = document.getElementById(errorId);
+                if (!validator(input.value.trim())) {
+                    input.classList.add('error');
+                    errorElement.style.display = 'block';
+                    return false;
+                }
+                input.classList.remove('error');
+                errorElement.style.display = 'none';
+                return true;
+            };
+
+            const isRequired = value => value.length > 0;
+            const isEmail = value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+            // Simple validation that allows empty string (optional field) or valid phone number format
+            const isPhone = value => /^\s*(\+27|0)\d{2}\s*(\d{3})\s*(\d{4})\s*$/.test(value) || value === ''; 
+
+            contactForm.addEventListener('submit', function(e) {
+                // Initial check before allowing submission to Netlify
+                let isValid = true;
+                
+                // Name validation
+                isValid = validateField(document.getElementById('name'), 'name-error', isRequired) && isValid;
+                
+                // Email validation
+                isValid = validateField(document.getElementById('email'), 'email-error', isEmail) && isValid;
+                
+                // Phone validation 
+                validateField(document.getElementById('phone'), 'phone-error', isPhone);
+
+                // Message validation
+                isValid = validateField(document.getElementById('message'), 'message-error', isRequired) && isValid;
+
+                if (!isValid) {
+                    e.preventDefault(); // Stop the form submission to Netlify if client-side validation fails
+                    showMessage('Please correct the errors in the form before submitting.', 'error');
+                } 
+                // If isValid is true, the form proceeds to submit via Netlify, which handles the redirection (action="/")
             });
+
         });
     </script>
 </body>
+
 </html>
-
-
-
-
-
