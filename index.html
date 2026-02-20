@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Green Mode Gardens - Garden & Landscaping Services</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
     <style>
         :root {
@@ -70,13 +69,11 @@
         /* UTILITY CLASSES */
         .text-center { text-align: center; }
         
-        /* Updated Text-Secondary for Smooth Transition */
         .text-secondary { 
             color: var(--color-secondary); 
             transition: color 0.3s ease;
         }
 
-        /* THE SWAP EFFECT: When hovering the logo, turn the inner text Green */
         .logo:hover .text-secondary {
             color: var(--color-primary);
         }
@@ -105,19 +102,15 @@
         .section-padding {
             padding: 80px 0;
         }
-/* Custom styling for the PNG images used as service icons */
-.service-icon {
-    /* Set the strict display size, overriding the native 128px size */
-    width: 40px !important; 
-    height: 40px !important; 
-    
-    /* Ensure the image scales neatly within the 40x40 box */
-    object-fit: contain !important; 
-    
-    /* Centering and layout */
-    display: block !important; 
-    margin: 0 auto 10px auto !important; 
-}
+
+        .service-icon {
+            width: 40px !important; 
+            height: 40px !important; 
+            object-fit: contain !important; 
+            display: block !important; 
+            margin: 0 auto 10px auto !important; 
+        }
+
         /* HEADER & NAVIGATION */
         .header {
             position: fixed;
@@ -131,7 +124,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         .header.scrolled {
-            height: 60px; /* Shrink effect */
+            height: 60px; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         .nav-container {
@@ -144,7 +137,6 @@
             margin: 0 auto;
         }
         
-        /* UPDATED LOGO STYLES TO ACCOMMODATE IMAGE */
         .logo {
             font-family: var(--font-heading);
             font-weight: 900;
@@ -153,16 +145,16 @@
             letter-spacing: 1px;
             display: flex;
             align-items: center;
-            gap: 12px; /* Space between the image and the text */
+            gap: 12px;
         }
         .header-logo-img {
-            height: 40px; /* Restricts the logo to fit perfectly in the header */
+            height: 40px; 
             width: auto;
             object-fit: contain;
         }
 
         .nav-menu {
-            display: none; /* Hidden by default on mobile */
+            display: none; 
             list-style: none;
         }
         .nav-menu a {
@@ -176,7 +168,7 @@
             color: var(--color-secondary);
         }
         .nav-toggle {
-            display: block; /* Visible by default on mobile */
+            display: block; 
             font-size: 1.8rem;
             cursor: pointer;
             color: var(--color-primary);
@@ -189,7 +181,7 @@
             left: 0;
             width: 100%;
             height: calc(100% - var(--header-height));
-            background-color: rgba(45, 80, 22, 0.98); /* Deep Forest Green with opacity */
+            background-color: rgba(45, 80, 22, 0.98); 
             z-index: 999;
             display: none;
             flex-direction: column;
@@ -216,7 +208,7 @@
             color: var(--color-secondary);
         }
 
-        /* HERO SECTION (STATIC IMAGE) */
+        /* HERO SECTION */
         #hero {
             position: relative;
             height: 100vh;
@@ -227,11 +219,10 @@
             overflow: hidden;
             color: var(--color-light-text);
             text-align: center;
-            /* Static image background properties - USING RELATIVE PATH */
             background-image: url('images/hero.jpg'); 
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Optional: adds a parallax effect */
+            background-attachment: fixed; 
         }
         
         .hero-overlay {
@@ -240,7 +231,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6); /* Darker overlay for contrast */
+            background: rgba(0, 0, 0, 0.6); 
             z-index: 1;
         }
         .hero-content {
@@ -266,7 +257,7 @@
 
         /* ABOUT SECTION */
         #about .container > h2 {
-            margin-bottom: 40px; /* Increased padding under "Who We Are" */
+            margin-bottom: 40px; 
         }
         #about .grid {
             display: grid;
@@ -283,14 +274,14 @@
         }
         .about-text h3 {
             margin-top: 25px; 
-            margin-bottom: 25px; /* Increased padding under "Our Philosophy" */
+            margin-bottom: 25px; 
         }
         .about-image {
             overflow: hidden;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            opacity: 0; /* for animation */
-            transform: translateY(20px); /* for animation */
+            opacity: 0; 
+            transform: translateY(20px); 
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
         .about-image.visible {
@@ -324,8 +315,8 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            opacity: 0; /* for animation */
-            transform: translateY(20px); /* for animation */
+            opacity: 0; 
+            transform: translateY(20px); 
         }
         .service-card.visible {
             opacity: 1;
@@ -362,8 +353,8 @@
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border-left: 5px solid var(--color-secondary);
-            opacity: 0; /* for animation */
-            transform: translateX(-20px); /* for animation */
+            opacity: 0; 
+            transform: translateX(-20px); 
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
         .testimonial-card.visible {
@@ -385,50 +376,87 @@
             color: var(--color-text-secondary);
         }
 
-        /* CONTACT SECTION */
+        /* WHATSAPP CONTACT SECTION */
         #contact .grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 40px;
             margin-top: 40px;
         }
-        .contact-form label {
+        .contact-form label.input-label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--color-primary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .contact-form input[type="text"],
-        .contact-form input[type="email"],
         .contact-form textarea {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
             font-family: var(--font-body);
             font-size: 1rem;
-            transition: border-color 0.3s ease;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background-color: #fff;
         }
         .contact-form input:focus,
         .contact-form textarea:focus {
             border-color: var(--color-secondary);
             outline: none;
-        }
-        /* Style for the Netlify Honeypot field (hidden from users) */
-        .hidden-hp { 
-            position: absolute; 
-            top: -9999px; 
-            left: -9999px;
-            visibility: hidden;
-            z-index: -1;
+            box-shadow: 0 0 0 3px rgba(218, 165, 32, 0.15);
         }
 
+        /* CHECKBOX GRID STYLING */
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        .checkbox-card {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background-color: #fff;
+            font-size: 0.95rem;
+            color: var(--color-text);
+            font-weight: 600;
+        }
+        .checkbox-card:hover {
+            border-color: var(--color-secondary);
+            background-color: var(--color-bg-main);
+        }
+        .checkbox-card input[type="checkbox"] {
+            margin-right: 12px;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--color-primary);
+            cursor: pointer;
+        }
+        .checkbox-card.selected {
+            border-color: var(--color-primary);
+            background-color: var(--color-bg-alt);
+            box-shadow: 0 2px 8px rgba(45, 80, 22, 0.08);
+        }
+
+        /* CONTACT SIDE INFO */
         .contact-info {
-            padding: 30px;
+            padding: 40px 30px;
             background-color: var(--color-primary);
             color: var(--color-light-text);
             border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .contact-info h3 {
             color: var(--color-secondary);
@@ -450,30 +478,62 @@
         .contact-info a:hover {
             color: var(--color-secondary);
         }
-        .error-message {
-            color: #D32F2F; /* Red for errors */
-            font-size: 0.9rem;
-            margin-top: -10px;
-            margin-bottom: 10px;
-            display: none;
-        }
-        .form-message {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 4px;
-            display: none;
-            font-weight: 600;
+        
+        .whatsapp-btn-large {
+            display: block;
             text-align: center;
+            background-color: #25D366;
+            color: white !important;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
         }
-        .form-message.success {
-            background-color: #D4EDDA;
-            color: #155724;
-        }
-        .form-message.error {
-            background-color: #F8D7DA;
-            color: #721C24;
+        .whatsapp-btn-large:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
         }
 
+        .error-message {
+            color: #D32F2F; 
+            font-size: 0.85rem;
+            margin-top: -15px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: none;
+        }
+
+        /* FLOATING WHATSAPP BUTTON */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+            color: #FFF;
+        }
+        .whatsapp-icon {
+            margin-top: 2px;
+        }
 
         /* FOOTER */
         .footer {
@@ -505,49 +565,27 @@
         }
 
         /* MEDIA QUERIES */
-
-        /* Tablet (768px and up) */
         @media (min-width: 768px) {
             h1 { font-size: 3.5rem; }
             h2 { font-size: 2.5rem; margin-bottom: 30px; } 
-
-            .container {
-                padding: 60px 0;
-            }
-
-            .nav-menu {
-                display: flex;
-            }
-            .nav-toggle {
-                display: none; /* Hide toggle on tablet+ */
-            }
-            .mobile-menu-overlay {
-                display: none !important; /* Ensure mobile overlay is hidden */
-            }
-
-            #about .grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .testimonial-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            #contact .grid {
-                grid-template-columns: 1.5fr 1fr;
-            }
+            .container { padding: 60px 0; }
+            .nav-menu { display: flex; }
+            .nav-toggle { display: none; }
+            .mobile-menu-overlay { display: none !important; }
+            #about .grid { grid-template-columns: 1fr 1fr; }
+            .testimonial-grid { grid-template-columns: repeat(3, 1fr); }
+            #contact .grid { grid-template-columns: 1.5fr 1fr; }
+            .checkbox-grid { grid-template-columns: 1fr 1fr; }
+            .whatsapp-float { bottom: 40px; right: 40px; }
         }
 
-        /* Desktop (1024px and up) */
         @media (min-width: 1024px) {
             h1 { font-size: 4.5rem; }
             h2 { font-size: 3rem; margin-bottom: 40px; } 
-
-            .service-card {
-                padding: 40px;
-            }
+            .service-card { padding: 40px; }
         }
 
-        /* Scroll Animations (using opacity and transform) */
+        /* Scroll Animations */
         .scroll-animate {
             opacity: 0;
             transform: translateY(20px);
@@ -564,7 +602,6 @@
 
     <header class="header" id="main-header">
         <div class="nav-container">
-            
             <a href="#hero" class="logo">
                 <img src="images/logo.png" alt="Green Mode Gardens Icon" class="header-logo-img">
                 Green <span class="text-secondary">Mode</span> Gardens
@@ -604,14 +641,13 @@
             <h2 class="text-center scroll-animate">Who We Are</h2>
             <div class="grid">
                 <div class="about-text scroll-animate">
-                    <p>African Landscape is a family-run business with over two decades of dedicated service in the Pretoria region. Our journey began with a simple passion: to transform ordinary spaces into extraordinary, sustainable environments that thrive in the local climate.</p>
+                    <p>Green Mode Gardens is a family-run business with over two decades of dedicated service in the Pretoria region. Our journey began with a simple passion: to transform ordinary spaces into extraordinary, sustainable environments that thrive in the local climate.</p>
                     <h3 class="text-secondary">Our Philosophy</h3>
                     <p>We believe great landscaping is a blend of art and science. Our approach is modern and organic, focusing on water-wise solutions and indigenous plants that enhance the local ecology while providing a beautiful, professional, and tranquil space for you to enjoy. From detailed garden maintenance to large-scale commercial designs, our 20+ years of experience guarantee exceptional results and unwavering professionalism.</p>
                     <a href="#contact" class="button">Discuss Your Project</a>
                 </div>
                 <div class="about-image">
                     <img src="images/about-us-garden.jpg" alt="A beautifully maintained garden with indigenous plants and a modern water feature.">
-                </div>
                 </div>
             </div>
         </div>
@@ -667,7 +703,7 @@
             <h2 class="scroll-animate">What Our Clients Say</h2>
             <div class="testimonial-grid">
                 <div class="testimonial-card scroll-animate" style="transition-delay: 0.1s;">
-                    <p class="testimonial-quote"><i class="fa-solid fa-quote-left"></i> African Landscape has maintained our corporate campus for five years. Their professionalism and attention to detail are unmatched. Our gardens look immaculate year-round.</p>
+                    <p class="testimonial-quote"><i class="fa-solid fa-quote-left"></i> Green Mode Gardens has maintained our corporate campus for five years. Their professionalism and attention to detail are unmatched. Our gardens look immaculate year-round.</p>
                     <p class="testimonial-author">Mr. R. van der Merwe</p>
                     <p class="testimonial-source">Corporate Client, Centurion</p>
                 </div>
@@ -690,44 +726,73 @@
             <h2 class="text-center scroll-animate">Get in Touch</h2>
             <div class="grid">
                 <div class="contact-form scroll-animate">
-                    <h3>Request a Free, No-Obligation Quote</h3>
-                    <form id="contactForm" name="contact-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/">
-                        <p class="hidden-hp">
-                            <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-                        </p>
+                    <h3 style="margin-bottom: 25px; color: var(--color-primary);">Request a Consultation via WhatsApp</h3>
+                    
+                    <form id="waContactForm">
+                        <div>
+                            <label class="input-label" for="waName">Full Name *</label>
+                            <input type="text" id="waName" required placeholder="e.g., John Doe">
+                            <div id="wa-name-error" class="error-message">Please enter your name.</div>
+                        </div>
+                        
+                        <div>
+                            <label class="input-label" for="waLocation">Location / Suburb</label>
+                            <input type="text" id="waLocation" placeholder="e.g., Waterkloof, Pretoria">
+                        </div>
+                        
+                        <div>
+                            <label class="input-label">Services Required (Select at least one) *</label>
+                            <div class="checkbox-grid">
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="services" value="Regular Garden Maintenance">
+                                    Regular Garden Maintenance
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="services" value="Garden Waste Removal">
+                                    Garden Waste Removal
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="services" value="Comprehensive Weed Control">
+                                    Comprehensive Weed Control
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="services" value="Soil Enrichment & Fertilization">
+                                    Soil Enrichment & Fertilization
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="services" value="Pest & Disease Control">
+                                    Pest & Disease Control
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="services" value="Professional Tree Care & Removal">
+                                    Professional Tree Care & Removal
+                                </label>
+                            </div>
+                            <div id="wa-service-error" class="error-message">Please select at least one service.</div>
+                        </div>
 
                         <div>
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required aria-required="true" placeholder="John Doe">
-                            <div id="name-error" class="error-message">Name is required.</div>
+                            <label class="input-label" for="waMessage">Additional Information</label>
+                            <textarea id="waMessage" rows="4" placeholder="Tell us briefly about your garden size, specific issues, or vision..."></textarea>
                         </div>
-                        <div>
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required aria-required="true" placeholder="name@example.com">
-                            <div id="email-error" class="error-message">A valid email is required.</div>
-                        </div>
-                        <div>
-                            <label for="phone">Phone Number</label>
-                            <input type="text" id="phone" name="phone" placeholder="(012) 123 4567">
-                            <div id="phone-error" class="error-message">Please enter a valid phone number.</div>
-                        </div>
-                        <div>
-                            <label for="message">Message/Project Details</label>
-                            <textarea id="message" name="message" rows="5" required aria-required="true" placeholder="Tell us about your garden maintenance or landscaping needs."></textarea>
-                            <div id="message-error" class="error-message">Message is required.</div>
-                        </div>
-                        <button type="submit" class="button">Submit Request</button>
+                        
+                        <button type="button" id="waSubmitBtn" class="button" style="width: 100%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; padding: 15px;">
+                            <i class="fab fa-whatsapp" style="font-size: 1.5rem; margin-right: 12px;"></i> Send Request via WhatsApp
+                        </button>
                     </form>
-                    <div id="form-message" class="form-message"></div>
                 </div>
 
                 <div class="contact-info scroll-animate">
-                    <h3>Contact Details (Pretoria)</h3>
-                    <p><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:+27125550000">(012) 555 0000</a></p>
-                    <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:info@africanlandscape.co.za">info@africanlandscape.co.za</a></p>
-                    <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 123 Garden Road, Pretoria, 0002</p>
-                    <p style="margin-top: 30px;"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> **20+ Years of Experience**</p>
-                    <p><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> **Fully Insured & Certified**</p>
+                    <h3 style="color: white;">Prefer to Chat Directly?</h3>
+                    <p style="margin-bottom: 25px; line-height: 1.8;">Skip the form and start a conversation with us instantly on WhatsApp. We are ready to assist with your landscaping needs.</p>
+                    
+                    <p><i class="fa-solid fa-location-dot"></i> 123 Garden Road, Pretoria, 0002</p>
+                    <p style="margin-top: 15px;"><i class="fa-solid fa-user-tie"></i> **20+ Years of Experience**</p>
+                    <p><i class="fa-solid fa-screwdriver-wrench"></i> **Fully Insured & Certified**</p>
+                    
+                    <a href="https://wa.me/27827433803" target="_blank" rel="noopener noreferrer" class="whatsapp-btn-large">
+                        <i class="fab fa-whatsapp" style="margin-right: 8px; font-size: 1.3rem;"></i> Message Us Now
+                    </a>
                 </div>
             </div>
         </div>
@@ -740,9 +805,13 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <p>&copy; 2025 African Landscape. All rights reserved. Servicing the Pretoria region.</p>
+            <p>&copy; 2026 Green Mode Gardens. All rights reserved. Servicing the Pretoria region.</p>
         </div>
     </footer>
+
+    <a href="https://wa.me/27827433803" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp whatsapp-icon"></i>
+    </a>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -750,11 +819,9 @@
             const navToggle = document.getElementById('nav-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileLinks = document.querySelectorAll('.mobile-link');
-            const contactForm = document.getElementById('contactForm');
-            const formMessage = document.getElementById('form-message');
             const scrollElements = document.querySelectorAll('.scroll-animate, .about-image');
 
-            // --- 1. Navbar Scroll Effect (Shrink) ---
+            // --- 1. Navbar Scroll Effect ---
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 100) {
                     header.classList.add('scrolled');
@@ -766,17 +833,15 @@
             // --- 2. Mobile Menu Toggle ---
             const toggleMenu = () => {
                 mobileMenu.classList.toggle('open');
-                // Optional: Prevent background scrolling
                 document.body.classList.toggle('no-scroll');
             };
 
             navToggle.addEventListener('click', toggleMenu);
             mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
 
-            // --- 3. Smooth Scroll Behavior for Anchor Links ---
+            // --- 3. Smooth Scroll Behavior ---
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
-                    // Only prevent default if it's an internal link
                     if (this.getAttribute('href').length > 1) {
                          e.preventDefault();
                         const targetId = this.getAttribute('href');
@@ -796,75 +861,105 @@
                 });
             });
 
-
-            // --- 4. Scroll Animations (Intersection Observer API) ---
+            // --- 4. Scroll Animations ---
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        observer.unobserve(entry.target); // Stop observing once visible
+                        observer.unobserve(entry.target); 
                     }
                 });
-            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }); // Use rootMargin to load slightly before hitting bottom
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }); 
 
             scrollElements.forEach(el => {
                 observer.observe(el);
             });
             
-            // --- 5. Form Validation & Submission ---
+            // --- 5. WhatsApp Form Logic & Checkbox Interaction ---
             
-            // NOTE: Netlify handles the actual form submission and success redirect (to action="/"). 
-            // The following JS is for front-end validation feedback BEFORE Netlify submission.
+            // Initialize checkbox visual feedback
+            const initializeCheckboxes = () => {
+                const checkboxCards = document.querySelectorAll('.checkbox-card');
+                
+                checkboxCards.forEach(card => {
+                    const checkbox = card.querySelector('input[type="checkbox"]');
+                    
+                    // Toggle class when clicked
+                    checkbox.addEventListener('change', () => {
+                        if(checkbox.checked) {
+                            card.classList.add('selected');
+                        } else {
+                            card.classList.remove('selected');
+                        }
+                        // Hide error if user selects something
+                        document.getElementById('wa-service-error').style.display = 'none';
+                    });
+                });
+            };
             
-            const showMessage = (message, type) => {
-                formMessage.textContent = message;
-                formMessage.className = `form-message ${type}`;
-                formMessage.style.display = 'block';
-                setTimeout(() => formMessage.style.display = 'none', 5000);
-            };
+            initializeCheckboxes();
 
-            const validateField = (input, errorId, validator) => {
-                const errorElement = document.getElementById(errorId);
-                if (!validator(input.value.trim())) {
-                    input.classList.add('error');
-                    errorElement.style.display = 'block';
-                    return false;
-                }
-                input.classList.remove('error');
-                errorElement.style.display = 'none';
-                return true;
-            };
-
-            const isRequired = value => value.length > 0;
-            const isEmail = value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-            // Simple validation that allows empty string (optional field) or valid phone number format
-            const isPhone = value => /^\s*(\+27|0)\d{2}\s*(\d{3})\s*(\d{4})\s*$/.test(value) || value === ''; 
-
-            contactForm.addEventListener('submit', function(e) {
-                // Initial check before allowing submission to Netlify
+            // Handle WhatsApp submission
+            const sendWhatsAppRequest = () => {
+                // Get form values
+                const nameInput = document.getElementById('waName');
+                const locationInput = document.getElementById('waLocation');
+                const messageInput = document.getElementById('waMessage');
+                const nameError = document.getElementById('wa-name-error');
+                const serviceError = document.getElementById('wa-service-error');
+                const selectedServices = document.querySelectorAll('input[name="services"]:checked');
+                
                 let isValid = true;
                 
-                // Name validation
-                isValid = validateField(document.getElementById('name'), 'name-error', isRequired) && isValid;
+                // Validate Name
+                if (nameInput.value.trim() === '') {
+                    nameInput.style.borderColor = '#D32F2F';
+                    nameError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    nameInput.style.borderColor = '#ddd';
+                    nameError.style.display = 'none';
+                }
+
+                // Hide name error on typing
+                nameInput.addEventListener('input', () => {
+                    nameInput.style.borderColor = '#ddd';
+                    nameError.style.display = 'none';
+                });
                 
-                // Email validation
-                isValid = validateField(document.getElementById('email'), 'email-error', isEmail) && isValid;
+                // Validate Services
+                if (selectedServices.length === 0) {
+                    serviceError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    serviceError.style.display = 'none';
+                }
                 
-                // Phone validation 
-                validateField(document.getElementById('phone'), 'phone-error', isPhone);
+                // Stop if invalid
+                if (!isValid) return;
+                
+                // Format the WhatsApp Message
+                let servicesText = "";
+                selectedServices.forEach(cb => {
+                    servicesText += `• ${cb.value}\n`;
+                });
+                
+                const locationText = locationInput.value.trim() ? `\n📍 Location: ${locationInput.value.trim()}` : '';
+                const additionalInfo = messageInput.value.trim() ? messageInput.value.trim() : 'None provided.';
+                
+                const messageBody = `🌿 GREEN MODE GARDENS - SERVICE REQUEST\n\n━━━━━━━━━━━━━━━━━━━━━━━━━\n📋 CLIENT DETAILS\n━━━━━━━━━━━━━━━━━━━━━━━━━\n👤 Name: ${nameInput.value.trim()}${locationText}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━\n✅ SERVICES REQUESTED\n━━━━━━━━━━━━━━━━━━━━━━━━━\n${servicesText}\n━━━━━━━━━━━━━━━━━━━━━━━━━\n📝 ADDITIONAL INFORMATION\n━━━━━━━━━━━━━━━━━━━━━━━━━\n${additionalInfo}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━\nLooking forward to your response!`;
+                
+                // Encode and redirect
+                const encodedMessage = encodeURIComponent(messageBody);
+                const whatsappNumber = "27827433803";
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+                
+                window.open(whatsappUrl, '_blank');
+            };
 
-                // Message validation
-                isValid = validateField(document.getElementById('message'), 'message-error', isRequired) && isValid;
-
-                if (!isValid) {
-                    e.preventDefault(); // Stop the form submission to Netlify if client-side validation fails
-                    showMessage('Please correct the errors in the form before submitting.', 'error');
-                } 
-                // If isValid is true, the form proceeds to submit via Netlify, which handles the redirection (action="/")
-            });
-
+            // Attach event to submit button
+            document.getElementById('waSubmitBtn').addEventListener('click', sendWhatsAppRequest);
         });
     </script>
 </body>
-
 </html>
